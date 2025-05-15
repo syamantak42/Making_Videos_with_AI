@@ -1,0 +1,14 @@
+- This repository contains the following notebooks and scripts to generate videos using AI
+- There are several different workflows presented, in the increasing order of complexity
+- In each case, we use an LLM (DeepSeekV3), an image generator (Flux/ Stability) and a text-to-speech model (Kokoro)
+- the LLM generates the script and image prompts, which are used by the TTS and image generator, everything is finally put together
+- Difference is in how the LLM is being used
+  
+- ***************************************** WorkFlow_1 ***********************************************
+- File: ai-video-generator-DeepSeek-Stability-Kokoro.ipynb :
+- Only uses the existing "knowledge" of the LLM, nothing additional
+- Fine for generic well-known topics and shorter (<5 minute) videos
+- ***************************************** WorkFlow_2 ***********************************************
+- File: ai-video-generation_with_wiki-DeepSeek-Flux-Kokoro.ipynb :
+- Includes a wikipedia article as an additional resource
+- As the entire video (scripts + image prompts) is generated in one go, the length is limited by the maximum output tokens of the LLM   
