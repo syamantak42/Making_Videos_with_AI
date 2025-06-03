@@ -1,14 +1,19 @@
-This repository contains various notebooks and scripts to generate videos using AI. There are several different workflows presented, in the increasing order of complexity. In each case, we use an LLM (DeepSeekV3), an image generator (Flux/ Stability) and a text-to-speech model (Kokoro). The LLM generates the script and image prompts, which are used by the TTS and image generator, everything is finally put together. Difference is in how the LLM is being used
+# AI-Generated Video Workflows
 
-Videos generated using these notebooks/ scripts are uploaded here:
+This repository contains a set of notebooks and scripts for generating narrated videos using AI. Each workflow combines an LLM (DeepSeek V3), an image generation model (Flux or Stability), and a text-to-speech model (Kokoro). The LLM generates both the narration script and image prompts; images and audio are synthesized separately and assembled into a video.
+
+Videos created using these workflows are available at:  
 https://www.youtube.com/@Tales_from_thePast
-  
-- ************************************** WorkFlow_1: Simple LLM *****************************************
-- File: notebooks/ai-video-generator-DeepSeek-Stability-Kokoro.ipynb :
-- Only uses the existing "knowledge" of the LLM, nothing additional
-- Fine for generic well-known topics and shorter (<5 minute) videos
-- ********************************** WorkFlow_2: LLM + wikipedia article *******************************
-- File: notebooks/ai-video-generation_with_wiki-DeepSeek-Flux-Kokoro.ipynb :
-- Includes a wikipedia article as an additional resource
-- As the entire video (scripts + image prompts) is generated in one go, the length is limited by the maximum output tokens of the LLM
-- Can create videos of length 10 minutes max
+
+## Workflows
+
+### Workflow 1: Basic LLM Generation  
+**File**: `notebooks/ai-video-generator-DeepSeek-Stability-Kokoro.ipynb`  
+- Uses the LLM without any external sources  
+- Suitable for short, general-topic videos (under 5 minutes)  
+
+### Workflow 2: LLM with Wikipedia Source  
+**File**: `notebooks/ai-video-generation_with_wiki-DeepSeek-Flux-Kokoro.ipynb`  
+- Augments LLM with a Wikipedia article  
+- All script and prompts are generated in a single pass  
+- Output length constrained by LLM token limits (~10 minutes max)
